@@ -263,8 +263,34 @@
                                     1 balcony
                                 </span>
                             </div>
+                            <div class="facilities mb-4">
+                                <h6 class="mb-1">Facilities</h6>
+                                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                    wifi
+                                </span>
+                                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                    television
+                                </span>
+                                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                    ac
+                                </span>
+                                <span class="badge rounded-pill bg-light text-dark text-wrap">
+                                    room heater
+                                </span>
+                            </div>
+                            <div class="rating mb-4">
+                                <h6 class="mb-1">Rating</h6>
+                                <span class="badge rounded-pill bg-light">
+                                 <i class="bi bi-star-fill text-warnng"></i>
+                                <i class="bi bi-star-fill text-warnng"></i>
+                                <i class="bi bi-star-fill text-warnng"></i>
+                                <i class="bi bi-star-fill text-warnng"></i>   
+                                </span>
+                                
+                            </div>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
+                        
 
                     </div>
                 </div>

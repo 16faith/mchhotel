@@ -209,7 +209,7 @@
             <div class="swiper-wrapper mb-5">
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
-                        <img src="..." width="30px">
+                        <img src="#" width="30px">
                         <h6 class="m-0 ms-2">Random user1</h6>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores nobis dolore adipisci modi! Similique ea soluta hic sapiente illo sequi.</p>
@@ -222,7 +222,7 @@
                 </div>
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
-                        <img src="..." width="30px">
+                        <img src="#" width="30px">
                         <h6 class="m-0 ms-2">Random user1</h6>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores nobis dolore adipisci modi! Similique ea soluta hic sapiente illo sequi.</p>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
-                        <img src="..." width="30px">
+                        <img src="#" width="30px">
                         <h6 class="m-0 ms-2">Random user1</h6>
                     </div>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores nobis dolore adipisci modi! Similique ea soluta hic sapiente illo sequi.</p>

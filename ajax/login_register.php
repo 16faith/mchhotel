@@ -8,7 +8,7 @@
 
         //match password and confirm password field
 
-        if($data['pass'] =! $data['cpass']){
+        if($data['pass'] != $data['cpass']){
             echo 'pass_mismatch';
             exit;
         }
@@ -32,6 +32,20 @@
         else if($img == 'upd_failed'){
             echo 'upd_failed';
             exit;
+        }
+
+        // encrypt password
+
+        $enc_pass = password_hash($data['pass'],PASSWORD_BCRYPT);
+
+        $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`, `pincode`, `dob`, `profile`, `password`) VALUES (?,?,?,?,?,?,?,?)";
+        $values = [$data['name'], $data['email'], $data['address'], $data['phonenum'], $data['pincode'], $data['dob'],$img,$enc_pass];
+
+        if(insert($query,$values,'ssssssss')){
+            echo '1';
+        }
+        else{
+            echo 'ins_failed';
         }
 
     }

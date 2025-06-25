@@ -1,4 +1,14 @@
-    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
+    <?php 
+        require('admin/inc/db_config.php');
+        require('admin/inc/essentials.php');
+
+        $contact_q = "SELECT * FROM `contact_details` WHERE `id` = ?";
+        $values = [1];
+        $contact_r = mysqli_fetch_assoc(select($contact_q, $values, 'i'));
+     
+    ?>
+    
+    <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">MCH Hotel</a>
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active me-2" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link me-2" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link me-2" href="rooms.php">Rooms</a>
@@ -67,7 +77,7 @@
     <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form>
+                <form id="register-form">
                     <div class="modal-header">
                     <h5 class="modal-title d-flexm align-items-center">
                         <i class="bi bi-person-lines-fill fs-3 me-2"></i>
@@ -83,39 +93,39 @@
                             <div class="row">
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control shadow-none">
+                                    <input name="name" type="text" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control shadow-none">
+                                    <input name="email" type="email" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Phone Number</label>
-                                    <input type="number" class="form-control shadow-none">
+                                    <input name="phonenum" type="number" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
                                     <label class="form-label">Picture</label>
-                                    <input type="file" class="form-control shadow-none">
+                                    <input name="profile" type="file" accept=".jpg,.jpeg,.png,.webp" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-12 p-0 mb-3">
                                     <label class="form-label">Address</label>
-                                    <textarea class="form-control shadow-none" rows="1"></textarea>
+                                    <textarea name="address" class="form-control shadow-none" rows="1" required></textarea>
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Pincode</label>
-                                    <input type="number" class="form-control shadow-none">
+                                    <input name="pincode" type="number" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
                                     <label class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control shadow-none">
+                                    <input name="dob" type="date" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-6 ps-0 mb-3">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control shadow-none">
+                                    <input name="pass" type="password" class="form-control shadow-none" required>
                                 </div>
                                 <div class="col-md-6 p-0 mb-3">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control shadow-none">
+                                    <input name="cpass" type="password" class="form-control shadow-none" required>
                                 </div>
                             </div>
                         </div>

@@ -32,7 +32,7 @@
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 oreder-lg-2 oreder-md-2 order-1">
-                <img src="..." class="w-100">
+                <img src="images/about/about.jpg" class="w-100">
             </div>
         </div>
     </div>
@@ -40,25 +40,25 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/pexels-thorsten-technoman-109353-338504.jpg" width="70px">
+                    <img src="images/about/hotel.svg" width="70px">
                     <h4 class="mt-3">100+ ROOMS</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/pexels-thorsten-technoman-109353-338504.jpg" width="70px">
+                    <img src="images/about/customers.svg" width="70px">
                     <h4 class="mt-3">200+ CUSTOMERS</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/pexels-thorsten-technoman-109353-338504.jpg" width="70px">
+                    <img src="images/about/rating.svg" width="70px">
                     <h4 class="mt-3">150+ REVIEWS</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/pexels-thorsten-technoman-109353-338504.jpg" width="70px">
+                    <img src="images/about/staff.svg" width="70px">
                     <h4 class="mt-3">200+ STAFFS</h4>
                 </div>
             </div>
@@ -70,34 +70,18 @@
     <div class="container px-4">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper mb-5">
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="..." class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
+                <?php 
+                    $about_r = selectAll('team_details');
+                    $path = ABOUT_IMG_PATH;
+                    while($row = mysqli_fetch_assoc($about_r)){
+                        echo<<<data
+                            <div class="swiper-slide bg-white text-center overflow-hidden rounded">
+                                <img src="$path$row[picture]" class="w-100">
+                                <h5 class="mt-2">$row[name]</h5>
+                            </div>
+                        data;
+                    }
+                ?>
             </div>
             <div class="swiper-pagination"></div>
         </div>

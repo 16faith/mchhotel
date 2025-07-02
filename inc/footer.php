@@ -106,26 +106,29 @@
 
             xhr.onload = function(){
                 if(this.responseText == 'pass_mismatch'){
-                    alert('error', "Password doesn't match!");
+                    alert('danger', "Password doesn't match!");
                 }
                 else if(this.responseText == 'email_already'){
-                    alert('error', "Email is already registered!");
+                    alert('danger', "Email is already registered!");
                 }
                 else if(this.responseText == 'phone_already'){
-                    alert('error', "Phone number is already registered!");
+                    alert('danger', "Phone number is already registered!");
                 }
                 else if(this.responseText == 'inv_img'){
-                    alert('error', "Only JPG, WEBP, & PNG images are allowed!");
+                    alert('danger', "Only JPG, WEBP, & PNG images are allowed!");
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('error', "Image upload failed!");
+                    alert('danger', "Image upload failed!");
                 }
                 else if(this.responseText == 'ins_failed'){
-                    alert('error', "Registration failed! Server Down");
+                    alert('danger', "Registration failed! Server Down");
                 }
                 else{
                     alert('success', "Registration successful");
                     register_form.reset();
+                    setTimeout(() => {
+                        location.reload();
+                    }, 1000);
                 }
 
             }

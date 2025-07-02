@@ -51,43 +51,4 @@
         }
 
     }
-
-    if(isset($_POST['login']))
-    {
-        $data = filteration($_POST);
-
-        // Fetch user by email or phone
-        $u_exist = select("SELECT * FROM `user_cred` WHERE `email`=? OR `phonenum`=?", [$data['email_mob'],$data['email_mob']],'ss');
-
-        if(mysqli_num_rows($u_exist) == 0){
-            echo 'inv_email_mob'; // Invalid email or phone
-            exit;
-        }
-
-        $u_fetch = mysqli_fetch_assoc($u_exist);
-
-        if($u_fetch['status']==0){
-            echo 'inactive';
-            exit;
-        }
-        // Verify password
-        else{
-            if(!password_verify($data['pass'], $u_fetch['password'])){
-            echo 'invalid_pass';
-            }
-            else{
-                session_start();
-                $_SESSION['login'] = true;
-                $_SESSION['uId'] = $u_fetch['id'];
-                $_SESSION['uName'] = $u_fetch['name'];
-                $_SESSION['uPic'] = $u_fetch['profile'];
-                $_SESSION['uPhone'] = $u_fetch['phonenum'];
-                echo 1;
-            }
-        }
-        echo 'login_success';
-        exit;
-
-
-    }
 ?>

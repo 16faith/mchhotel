@@ -60,8 +60,7 @@
     }
 
     function remAlert(){
-    let alertElem = document.getElementsByClassName('alert')[0];
-    if(alertElem) alertElem.remove();
+        document.getElementsByClassName('alert')[0].remove();
     }
 
     function setActive()
@@ -107,30 +106,28 @@
 
             xhr.onload = function(){
                 if(this.responseText == 'pass_mismatch'){
-                    alert('danger', "Password doesn't match!");
+                    alert('error', "Password doesn't match!");
                 }
                 else if(this.responseText == 'email_already'){
-                    alert('danger', "Email is already registered!");
+                    alert('error', "Email is already registered!");
                 }
                 else if(this.responseText == 'phone_already'){
-                    alert('danger', "Phone number is already registered!");
+                    alert('error', "Phone number is already registered!");
                 }
                 else if(this.responseText == 'inv_img'){
-                    alert('danger', "Only JPG, WEBP, & PNG images are allowed!");
+                    alert('error', "Only JPG, WEBP, & PNG images are allowed!");
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('danger', "Image upload failed!");
+                    alert('error', "Image upload failed!");
                 }
                 else if(this.responseText == 'ins_failed'){
-                    alert('danger', "Registration failed! Server Down");
+                    alert('error', "Registration failed! Server Down");
                 }
                 else{
                     alert('success', "Registration successful");
                     register_form.reset();
-                    setTimeout(() => {
-                        location.reload();
-                    }, 1000); // Wait 1 second so user sees the alert
                 }
+
             }
 
             xhr.send(data);

@@ -18,12 +18,12 @@
         else{
             document.getElementById(position).appendChild(element);
         }
-    setTimeout(remAlert,3000);
+        
+        setTimeout(remAlert,2000);
     }
 
     function remAlert(){
-        let alertElem = document.getElementsByClassName('alert')[0];
-        if(alertElem) alertElem.remove();
+        document.getElementsByClassName('alert')[0].remove();
     }
 
     function setActive()

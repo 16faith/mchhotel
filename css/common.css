@@ -52,22 +52,3 @@ body::before {
     right: 25px;
     z-index: 1111;
 }
-/* Make a dark image light on a dark background */
-img.contrast-white {
-    filter: brightness(0) invert(1);
-}
-
-/* Make a light image dark on a light background */
-img.contrast-dark {
-    filter: brightness(0) invert(0);
-}
-
-/* Force custom-bg color even when disabled */
-.custom-bg:disabled,
-.custom-bg[disabled] {
-    background-color: var(--teal) !important;
-    border: 1px solid var(--teal) !important;
-    color: #fff !important;
-    opacity: 0.65; /* Optional: mimic Bootstrap's disabled opacity */
-    cursor: not-allowed;
-}

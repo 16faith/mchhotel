@@ -33,10 +33,10 @@
                         <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
                             <table class="table table-hover border">
                                 <thead class="text-center">
-                                    <tr class="bg-dark text-light">
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Action</th>
+                                    <tr>
+                                    <th class="bg-dark text-light"scope="col">#</th>
+                                    <th class="bg-dark text-light"scope="col">Name</th>
+                                    <th class="bg-dark text-light"scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="features-data" class="text-center justify-content-center align-items-center">
@@ -59,12 +59,12 @@
                         <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
                             <table class="table table-hover border">
                                 <thead class="text-center">
-                                    <tr class="bg-dark text-light">
-                                    <th scope="col">#</th>
-                                    <th scope="col">Icon</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col" width="40%">Description</th>
-                                    <th scope="col">Action</th>
+                                    <tr>
+                                    <th class="bg-dark text-light"class="bg-dark text-light"scope="col">#</th>
+                                    <th class="bg-dark text-light"class="bg-dark text-light"scope="col">Icon</th>
+                                    <th class="bg-dark text-light"class="bg-dark text-light"scope="col">Name</th>
+                                    <th class="bg-dark text-light"class="bg-dark text-light"scope="col" width="40%">Description</th>
+                                    <th class="bg-dark text-light"scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="facilities-data" class="text-center justify-content-center align-items-center">

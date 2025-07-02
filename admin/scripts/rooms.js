@@ -47,7 +47,7 @@ let add_room_form = document.getElementById('add_room_form');
                     get_all_rooms();
                 }
                 else{
-                    alert('error', 'something went wrong!');
+                    alert('danger', 'something went wrong!');
                 }
 
             }
@@ -149,7 +149,7 @@ let add_room_form = document.getElementById('add_room_form');
                     get_all_rooms();
                 }
                 else{
-                    alert('error', 'something went wrong!');
+                    alert('danger', 'something went wrong!');
                 }
 
             }
@@ -168,7 +168,7 @@ let add_room_form = document.getElementById('add_room_form');
                     get_all_rooms();
                 }
                 else{
-                    alert('error','Server down!');
+                    alert('danger','Server down!');
                 }
             }
 
@@ -194,14 +194,14 @@ let add_room_form = document.getElementById('add_room_form');
 
             xhr.onload = function(){
                 if(this.responseText == 'inv_img'){
-                    alert('error','only jpg,jpeg,webp or png images are allowed','image-alert');
+                    alert('danger','only jpg,jpeg,webp or png images are allowed','image-alert');
                     get_general();
                 }
                 else if(this.responseText == 'inv_size'){
-                    alert('error','images should be less than 2mb!');
+                    alert('danger','images should be less than 2mb!');
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('error','images upload failed. server down!');
+                    alert('danger','images upload failed. server down!');
                 }
                 else{
                     alert('success', 'new image added!', 'image-alert');
@@ -246,7 +246,7 @@ let add_room_form = document.getElementById('add_room_form');
                     alert('success', 'Image Removed!','image-alert');
                 }
                 else{
-                    alert('error','Image removal failed!','image-alert');
+                    alert('danger','Image removal failed!','image-alert');
                 }
             }
             xhr.send(data);
@@ -267,7 +267,7 @@ let add_room_form = document.getElementById('add_room_form');
                     alert('success', 'Image thumbnail changed!','image-alert');
                 }
                 else{
-                    alert('error','thumbnail update failed!','image-alert');
+                    alert('danger','thumbnail update failed!','image-alert');
                 }
             }
             xhr.send(data);
@@ -289,7 +289,7 @@ let add_room_form = document.getElementById('add_room_form');
                         get_all_rooms();
                     }
                     else{
-                        alert('error','Failed to remove room!','image-alert');
+                        alert('danger','Failed to remove room!','image-alert');
                     }
                 }
                 xhr.send(data);

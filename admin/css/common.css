@@ -1,5 +1,5 @@
 :root{
-    --teal:  #2ec1ac;
+    --teal:  #55f8e0;
     --teal_hover: #279e8c;
 }
 *{
@@ -53,7 +53,12 @@ input[type=number] {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #0c0c0c;
+}
+
+label.required::after {
+  content: " *";
+  color: red;
 }
 
 @media screen and (max-width: 991px){

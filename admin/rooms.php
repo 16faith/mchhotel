@@ -32,15 +32,15 @@
                         <div class="table-responsive-lg" style="height: 450px; overflow-y: scroll;">
                             <table class="table table-hover border text-center">
                                 <thead>
-                                    <tr class="bg-dark text-light">
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Area</th>
-                                    <th scope="col">Guest</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                    <tr>
+                                        <th  class="bg-dark text-light" scope="col">#</th>
+                                        <th  class="bg-dark text-light" scope="col">Name</th>
+                                        <th  class="bg-dark text-light" scope="col">Area</th>
+                                        <th  class="bg-dark text-light" scope="col">Guest</th>
+                                        <th  class="bg-dark text-light" scope="col">Price</th>
+                                        <th  class="bg-dark text-light" scope="col">Quantity</th>
+                                        <th  class="bg-dark text-light" scope="col">Status</th>
+                                        <th  class="bg-dark text-light" scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="room-data" class="text-center justify-content-center align-items-center">

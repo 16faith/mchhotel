@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
 <script>
     function alert(type,msg,position='body'){
@@ -18,6 +18,12 @@
         else{
             document.getElementById(position).appendChild(element);
         }
+    setTimeout(remAlert,3000);
+    }
+
+    function remAlert(){
+        let alertElem = document.getElementsByClassName('alert')[0];
+        if(alertElem) alertElem.remove();
     }
 
     function setActive()

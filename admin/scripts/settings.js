@@ -60,7 +60,7 @@
                     get_general();
                 }
                 else{
-                    alert('error','no changes made!');
+                    alert('danger','no changes made!');
                 }
 
             }
@@ -85,7 +85,7 @@
                         alert('success','Shutdown mode disabled!');
                     }
                 } else {
-                    alert('error','Operation failed!');
+                    alert('danger','Operation failed!');
                 }
 
                 get_general(); // refresh the toggle state
@@ -158,7 +158,7 @@
                     get_contacts();
                 }
                 else{
-                    alert('error','no changes made!');
+                    alert('danger','no changes made!');
                 }
             }
 
@@ -186,14 +186,14 @@
                 modal.hide();
 
                 if(this.responseText == 'inv_img'){
-                    alert('error','only jpg and png images are allowed');
+                    alert('danger','only jpg and png images are allowed');
                     get_general();
                 }
                 else if(this.responseText == 'inv_size'){
-                    alert('error','images should be less than 2mb!');
+                    alert('danger','images should be less than 2mb!');
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('error','images upload failed. server down!');
+                    alert('danger','images upload failed. server down!');
                 }
                 else{
                     alert('success', 'new member added!');
@@ -234,7 +234,7 @@
                     get_members();
                 }
                 else{
-                    alert('error','operation failed!');
+                    alert('danger','operation failed!');
                 }
             }
 

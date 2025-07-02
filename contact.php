@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCH Hotel - CONTACT US</title>
     <?php require('inc/links.php'); ?>
+    <title><?php echo $settings_r['site_title'] ?> - CONTACT US</title>
     
 </head>
 <body class="bg-light">
@@ -73,23 +73,23 @@
             </div>
             <div class="col-lg-6 col-md-6 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <form method="POST">
+                    <form method="POST" autocomplete="off">
                         <h5>Send a message</h5>
                         <div class="mt-3">
-                            <label class="form-label" style="font-weight: 500;">Name</label>
-                            <input name="name" required type="text" class="form-control shadow-none">
+                            <label class="form-label required" style="font-weight: 500;">Name</label>
+                            <input name="name" required type="text" class="form-control shadow-none" autocomplete="off">
                         </div>
                         <div class="mt-3">
-                            <label class="form-label" style="font-weight: 500;">Email</label>
-                            <input name="email" required type="email" class="form-control shadow-none">
+                            <label class="form-label required" style="font-weight: 500;">Email</label>
+                            <input name="email" required type="email" class="form-control shadow-none" autocomplete="off">
                         </div>
                         <div class="mt-3">
-                            <label class="form-label" style="font-weight: 500;">Subject</label>
-                            <input name="subject" required type="text" class="form-control shadow-none">
+                            <label class="form-label required" style="font-weight: 500;">Subject</label>
+                            <input name="subject" required type="text" class="form-control shadow-none" autocomplete="off">
                         </div>
                         <div class="mt-3">
-                            <label class="form-label" style="font-weight: 500;">Message</label>
-                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+                            <label class="form-label required" style="font-weight: 500;">Message</label>
+                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;" autocomplete="off"></textarea>
                         </div>
                         <button type="submit" name="send" required class="btn text-white custom-bg mt-3">SEND</button>
                     </form>
@@ -110,12 +110,13 @@
             if($res==1){
                 alert('success', 'Your message has been sent successfully!');
             } else {
-                alert('error', 'Unable to send your message. Please try again later.');
+                alert('danger', 'Unable to send your message. Please try again later.');
             }
         } 
     ?>
 
     <?php require('inc/footer.php'); ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>

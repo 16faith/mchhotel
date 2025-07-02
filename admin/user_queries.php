@@ -13,7 +13,7 @@
                 alert('success', 'Marked all as read!');
             }
             else{
-                alert('error', 'something went wrong!');
+                alert('danger', 'something went wrong!');
             }
         }
         else{
@@ -23,7 +23,7 @@
                 alert('success', 'Marked as read!');
             }
             else{
-                alert('error', 'something went wrong!');
+                alert('danger', 'something went wrong!');
             }
         }
     }
@@ -37,7 +37,7 @@
                 alert('success', 'All data has been deleted!');
             }
             else{
-                alert('error', 'something went wrong!');
+                alert('danger', 'something went wrong!');
             }
         }
         else{
@@ -47,7 +47,7 @@
                 alert('success', 'Message Deleted!');
             }
             else{
-                alert('error', 'something went wrong!');
+                alert('danger', 'something went wrong!');
             }
         }
     }
@@ -68,7 +68,7 @@
     <div class="container-fluid" id="main-content">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-                <h3 class="mb-4">User Queries</h3>
+                <h3 class="mb-4">USER QUERIES</h3>
 
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
@@ -80,14 +80,14 @@
                         <div class="table-responsive-md" style="height: 450px; overflow-y: scroll;">
                             <table class="table table-hover border">
                                 <thead class="sticky-top text-center">
-                                    <tr class="bg-dark text-light">
-                                    <th scope="col">#</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col" width="25%">Subject</th>
-                                    <th scope="col" width="35%">Message</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Action</th>
+                                    <tr>
+                                    <th class="bg-dark text-light"scope="col">#</th>
+                                    <th class="bg-dark text-light"scope="col">Name</th>
+                                    <th class="bg-dark text-light"scope="col">Email</th>
+                                    <th class="bg-dark text-light"scope="col" width="25%">Subject</th>
+                                    <th class="bg-dark text-light"scope="col" width="35%">Message</th>
+                                    <th class="bg-dark text-light"scope="col">Date</th>
+                                    <th class="bg-dark text-light"scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center justify-content-center align-items-center">

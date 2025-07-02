@@ -125,10 +125,10 @@
                 $img = imagecreatefrompng($image['tmp_name']);
             }
             else if($ext == 'webp' || $ext =='WEBP'){
-                $img = imagecreatefrompng($image['tmp_name']);
+                $img = imagecreatefromwebp($image['tmp_name']);
             }
             else{
-                $img = imagecreatefrompng($image['tmp_name']);
+                $img = imagecreatefromjpeg($image['tmp_name']);
             }
 
             if(imagejpeg($img, $img_path,75)){

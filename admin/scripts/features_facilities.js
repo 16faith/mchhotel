@@ -26,7 +26,7 @@ let feature_s_form = document.getElementById('feature_s_form');
                     get_features();
                 }
                 else{
-                    alert('error', 'something went wrong!');
+                    alert('danger', 'something went wrong!');
                 }
 
             }
@@ -60,10 +60,10 @@ let feature_s_form = document.getElementById('feature_s_form');
                     get_features();
                 }
                 else if(this.responseText == 'room_added'){
-                    alert('error','Feature is added in room!');
+                    alert('danger','Feature is added in room!');
                 }
                 else{
-                    alert('error','operation failed!');
+                    alert('danger','operation failed!');
                 }
             }
 
@@ -94,13 +94,13 @@ let feature_s_form = document.getElementById('feature_s_form');
                 modal.hide();
 
                 if(this.responseText == 'inv_img'){
-                    alert('error','only svg images are allowed');
+                    alert('danger','only svg images are allowed');
                 }
                 else if(this.responseText == 'inv_size'){
-                    alert('error','images should be less than 2mb!');
+                    alert('danger','images should be less than 2mb!');
                 }
                 else if(this.responseText == 'upd_failed'){
-                    alert('error','images upload failed. server down!');
+                    alert('danger','images upload failed. server down!');
                 }
                 else{
                     alert('success', 'new facility added!');
@@ -139,10 +139,10 @@ let feature_s_form = document.getElementById('feature_s_form');
                     get_facilities();
                 }
                 else if(this.responseText == 'room_added'){
-                    alert('error','Facility is added in room!');
+                    alert('danger','Facility is added in room!');
                 }
                 else{
-                    alert('error','operation failed!');
+                    alert('danger','operation failed!');
                 }
             }
 

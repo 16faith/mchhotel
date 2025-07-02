@@ -244,7 +244,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label fw-bold">Picture</label>
-                                        <input type="file" name="member_picture" id="member_picture_inp" accept="[.jpg, .jpeg, .png, .webp]"
+                                        <input type="file" name="member_picture" id="member_picture_inp" accept=".jpg, .jpeg, .png, .webp"
                                         class="form-control shadow-none" required>
                                     </div>
                                 </div>

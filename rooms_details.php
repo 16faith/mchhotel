@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCH Hotel - ROOM Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <?php require('inc/links.php'); ?>
-    
+    <title><?php echo $settings_r['site_title'] ?> - ROOM</title>
 </head>
 <body class="bg-light">
     
@@ -25,9 +24,7 @@
         }
 
         $room_data = mysqli_fetch_assoc($room_res);
-    ?>
-
-    
+    ?>   
 
     <div class="container">
         <div class="row">
@@ -148,9 +145,19 @@
                                 </div>
                             area;
 
-                            echo<<<book
-                                <a href="#" class="btn w-100 text-white custom-bg shadow-none">Book Now</a>
-                            book;
+                            if(!$settings_r['shutdown']){
+                                $login=0;
+                                if(isset($_SESSION['login']) && $_SESSION['login']==true){
+                                    $login=1;
+                                }
+                                echo<<<book
+                                    <button onclick='checkLoginToBook($login,$room_data[id])' class="btn w-100 text-white custom-bg shadow-none">Book Now</a>
+                                book; 
+                            } else {
+                                $book_btn = '';
+                            }
+
+                            
 
                         ?>
                     </div>

@@ -58,7 +58,7 @@
                 redirect('dashboard.php');
             }
             else{
-                alert('error','Login failed - Invalid Credentials');
+                alert('danger','Login failed - Invalid Credentials');
             }
         }    
 

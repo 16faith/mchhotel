@@ -407,9 +407,10 @@
         });
 
         var swiperRooms = new Swiper(".carousel-rooms", {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
             loop: false,
+             resizeObserver: true, // ensures it responds to screen size change
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -419,16 +420,22 @@
                 clickable: true,
             },
             breakpoints: {
-                  1024: {
-                    slidesPerView: 3,
+                  
+                480: {
+                    slidesPerView: 1,
                 },
                 768: {
                     slidesPerView: 2,
                 },
-                480: {
-                    slidesPerView: 1,
+                1024: {
+                    slidesPerView: 4,
                 },
             }
+            
+        });
+
+        window.addEventListener('resize', () => {
+            swiperRooms.update(); // Force Swiper to recalculate layout
         });
     </script>
 

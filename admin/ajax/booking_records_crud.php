@@ -176,4 +176,14 @@ if (isset($_POST['checkout_booking'])) {
     exit;
 }
 
+if (isset($_POST['refund_booking'])) {
+    $booking_id = filter_var($_POST['booking_id'], FILTER_SANITIZE_NUMBER_INT);
+
+    // Set booking_status to 'refunded'
+    $update = mysqli_query($con, "UPDATE booking_order SET booking_status = 'refunded' WHERE booking_id = '$booking_id'");
+
+    echo ($update) ? '1' : '0';
+    exit;
+}
+
 ?>

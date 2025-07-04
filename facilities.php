@@ -22,7 +22,7 @@
         <h2 class="fw-bold h-font text-center">OUR FACILITIES</h2>
         <div class="h-line bg-dark"></div>
         <p class="text-center mt-3">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, adipisci iste aspernatur modi mollitia,<br>commodi amet in ad nihil eius dignissimos. Delectus esse rerum cum, non dolor quod sit quasi!
+            At our hotel, we believe in providing more than just a place to stay.<br> We offer an experience that refreshes the body, mind, and soul.
         </p>
     </div>
 

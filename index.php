@@ -21,28 +21,28 @@
         }
 
          .swiper-button-next,
-    .swiper-button-prev {
-        color: #000 !important;
-        background: rgba(255,255,255,0.7);
-        border-radius: 50%;
-        border: 1px solid #000;
-        width: 40px;
-        height: 40px;
-        top: 40%;
-    }
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .swiper-pagination-bullet {
-        background: #000 !important;
-        opacity: 1;
-    }
-    .swiper-pagination-bullet-active {
-        background: #000 !important;
-        opacity: 1;
-    }
+        .swiper-button-prev {
+            color: #000 !important;
+            background: rgba(255,255,255,0.7);
+            border-radius: 50%;
+            border: 1px solid #000;
+            width: 40px;
+            height: 40px;
+            top: 40%;
+        }
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .swiper-pagination-bullet {
+            background: #000 !important;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active {
+            background: #000 !important;
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-light">

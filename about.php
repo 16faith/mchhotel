@@ -20,15 +20,19 @@
         <h2 class="fw-bold h-font text-center">ABOUT US</h2>
         <div class="h-line bg-dark"></div>
         <p class="text-center mt-3">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, adipisci iste aspernatur modi mollitia,<br>commodi amet in ad nihil eius dignissimos. Delectus esse rerum cum, non dolor quod sit quasi!
+            Welcome to MCH Hotel, your home away from home. Nestled in the heart of the city, our hotel blends comfort, style, and service to provide the perfect stay for both business and leisure travelers.
+
+Founded on the principles of hospitality, integrity, and innovation, MCH Hotel strives to deliver a premium experience without compromising affordability. Every detail, from our cozy rooms to our top-tier facilities, is crafted with your comfort in mind.
+
+Our team is committed to providing heartfelt service and creating unforgettable moments for every guest.
         </p>
     </div>
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 oreder-lg-1 oreder-md-1 order-2">
-                <h3 class="mb-3">Lorem, ipsum dolor.</h3>
+                <h3 class="mb-3">Michael Carlos Hernandez</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium provident accusamus voluptate sint vero? Cumque, saepe?
+                   Michael Carlos Hernandez is the visionary behind MCH Hotel. With a deep passion for hospitality and innovation, he founded the hotel to provide travelers with more than just a place to stay—he envisioned a space where comfort meets excellence. His dedication to quality service and guest satisfaction continues to shape the values and direction of the hotel today.
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 oreder-lg-2 oreder-md-2 order-1">
@@ -41,7 +45,7 @@
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
                     <img src="images/about/hotel.svg" width="70px">
-                    <h4 class="mt-3">100+ ROOMS</h4>
+                    <h4 class="mt-3">200+ ROOMS</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">

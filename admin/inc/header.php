@@ -23,7 +23,7 @@
                             <span>Bookings</span>
                             <span><i class="bi bi-caret-down-fill"></i></span>
                         </button>
-                        <div class="collapse show px-3 small mb-1" id="bookingLinks">
+                        <div class="collapse show px-3 mb-1" id="bookingLinks">
                                 <ul class="nav nav-pills flex-column rounded border border-secondary">
                                     <li class="nav-item">
                                         <a class="nav-link text-white" href="new_bookings.php">New Bookings</a>

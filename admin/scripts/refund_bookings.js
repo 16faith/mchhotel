@@ -10,6 +10,7 @@ function get_bookings(){
     xhr.send('get_bookings');
 }
 function refund_booking(id) {
+    
     if (confirm("Are you sure you want to refund this booking?")) {
         let data = new FormData();
         data.append('booking_id', id);
@@ -22,10 +23,10 @@ function refund_booking(id) {
         .then(res => res.text())
         .then(data => {
             if (data.trim() === '1') {
-                alertBox('success', 'Booking refunded successfully!');
+                alert('success', 'Booking refunded successfully!');
                 get_bookings();
             } else {
-                alertBox('danger', 'Refund failed.');
+                alert('danger', 'Refund failed.');
             }
         });
     }

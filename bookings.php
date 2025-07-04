@@ -48,7 +48,7 @@
                 {
                     $status_bg = "bg-success";
                     if($data['arrival'] == 0){
-                        $btn = "<a href='generate_pdf.php?gen_pdf&id={$data['booking_id']}' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>
+                        $btn = "<a href='generate_receipt.php?booking_id={$data['booking_id']}' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>
                         <button type='button' class='btn btn-dark btn-sm shadow-none mt-1'>Rate & Review</button>";
                     } else {
                         $btn = "<button type='button' onclick='cancel_booking({$data['booking_id']})' class='btn btn-danger btn-sm shadow-none'>Cancel</button>";
@@ -65,12 +65,12 @@
                     if($data['refund']==0){
                         $btn = "<span class='badge bg-primary'>Refund in process!</span>";
                     } else{
-                        $btn = "<a href='generate_pdf.php?gen_pdf&id={$data['booking_id']}' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+                        $btn = "<a href='generate_receipt.php?booking_id={$data['booking_id']}' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
                     }
                 }
                 else{
                     $status_bg = "bg-warning";
-                    $btn = "<a href='generate_pdf.php?gen_pdf&id={$data['booking_id']}' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
+                    $btn = "<a href='generate_receipt.php?booking_id={$data['booking_id']}' class='btn btn-dark btn-sm shadow-none'>Download PDF</a>";
                 }
 
                 echo<<<bookings
@@ -84,7 +84,7 @@
                                 <b>Check-out:</b> $checkout
                             </p>
                             <p>
-                                <b>Amount:</b> $$data[price]<br>
+                                <b>Amount:</b> $$data[trans_amount]<br>
                                 <b>Order ID:</b> $data[booking_id]<br>
                                 <b>Date:</b> $date
                             </p>

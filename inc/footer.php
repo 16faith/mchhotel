@@ -138,42 +138,49 @@
 
     let login_form = document.getElementById('login-form');
 
-    login_form.addEventListener('submit', (e)=>{
-        e.preventDefault();
+    login_form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-        let data = new FormData();
-        data.append('email_mob',login_form.elements['email_mob'].value);
-        data.append('pass',login_form.elements['pass'].value);
-        data.append('login','');
+    let data = new FormData();
+    data.append('email_mob', login_form.elements['email_mob'].value);
+    data.append('pass', login_form.elements['pass'].value);
+    data.append('login', '');
 
-        var myModal = document.getElementById('loginModal');
-        var modal = bootstrap.Modal.getInstance(myModal);
-        modal.hide();
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/login_register.php", true);
 
-        let xhr = new XMLHttpRequest();
-            xhr.open("POST","ajax/login_register.php",true);
+    xhr.onload = function () {
+        let res = this.responseText.trim();
 
-            xhr.onload = function(){
-                if(this.responseText == 'inv_email_mob'){
-                    alert('danger', "Invalid Email or Phone number!");
-                }
-                else if(this.responseText == 'inactive'){
-                    alert('danger', "Account suspended!");
-                }
-                else if(this.responseText == 'invalid_pass'){
-                    alert('danger', "Incorrect password!");
-                }
-                else{
-                    let fileurl = window.location.href.split('/').pop().split('?').shift();
-                    if(fileurl == 'room_details.php'){
-                        window.location = window.location.href;
-                    }
-                    window.location = window.location.pathname;
-                }
+        if (res == 'inv_email_mob') {
+            alert('danger', "Invalid Email or Phone number!");
+        }
+        else if (res == 'inactive') {
+            alert('danger', "Account suspended!");
+        }
+        else if (res == 'invalid_pass') {
+            alert('danger', "Incorrect password!");
+        }
+        else if (res == 'login_success') {
+            var myModal = document.getElementById('loginModal');
+            var modal = bootstrap.Modal.getInstance(myModal);
+            modal.hide();
+
+            let fileurl = window.location.href.split('/').pop().split('?').shift();
+            if (fileurl == 'room_details.php') {
+                window.location = window.location.href;
+            } else {
+                window.location = window.location.pathname;
             }
+        }
+        else {
+            alert('danger', "Unexpected error: " + res);
+        }
+    }
 
-        xhr.send(data);
-    });
+    xhr.send(data);
+});
+
 
     function checkLoginToBook(status, room_id){
         if(status){

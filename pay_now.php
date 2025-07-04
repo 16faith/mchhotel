@@ -22,7 +22,7 @@ if(isset($_POST['pay_now'])){
     $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 
     $frm_data = filteration($_POST);
-    $query1 = "INSERT INTO `booking_order`(`user_id`,`user_id`,`user_id`,`user_id`) VALUES (?,?,?,?)";
+    $query1 = "INSERT INTO `booking_order`(`user_id`,`room_id`,`check_in`,`check_out`,`order_id`) VALUES (?,?,?,?,?)";
     insert($query1,[$CUST_ID,$_SESSION['room']['id'],$frm_data['checkin'],$frm_data['checkout'],$ORDER_ID],'issss');
 
     $booking_id = mysqli_insert_id($con);
@@ -37,13 +37,12 @@ if(isset($_POST['pay_now'])){
     </head>
     <body>
         <h1>Please do not refresh page</h1>
-        <form method="post" action="#">
+        <form name="f1" method="post" action="#">
             <?php
             foreach($paramList as $name => $value){
-                echo '<input type="hidden" name=""' . $name .'"value="' .$value .'">';
+                echo '<input type="hidden" name="' . $name . '" value="' . $value . '">';
             } 
             ?>
-            <input type="hidden" name="check" value="<?php echo $checkSum ?>">
         </form>
 
         <script type="text/javascript">

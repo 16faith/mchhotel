@@ -16,8 +16,6 @@
             element.classList.add('custom-alert');    
         }
         else{
-            let alertElem = document.getElementsByClassName('alert')[0];
-            if(alertElem) alertElem.remove();
             document.getElementById(position).appendChild(element);
         }
     }

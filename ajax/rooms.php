@@ -6,6 +6,31 @@ date_default_timezone_set("Asia/Manila");
 session_start();
 
 if(isset($_GET['fetch_rooms'])){
+
+    //check availability data 
+    $check_avail = json_decode($_GET['check_avail'],true);
+
+    //checkin and checkout filter validations
+    if($check_avail['checkin'] != '' || $check_avail['checkout'] != ''){
+        $today_date = new DateTime(date('Y-m-d'));
+        $checkin_date = new DateTime($check_avail['checkin']);
+        $checkout_date = new DateTime($check_avail['checkout']);
+
+        if($checkin_date == $checkout_date){
+           echo"<h3 class='text-center text-danger mt-5'>Invalid dates entered!</h3>";
+           exit();
+        }
+        else if($checkout_date < $checkin_date){
+            echo"<h3 class='text-center text-danger mt-5'>Invalid dates entered!</h3>";
+           exit();
+        }
+        else if($checkin_date < $today_date){
+            echo"<h3 class='text-center text-danger mt-5'>Invalid dates entered!</h3>";
+           exit();
+        }
+    }
+
+
     //count  no of rooms
     $count_rooms = 0;
     $output = "";
@@ -19,6 +44,20 @@ if(isset($_GET['fetch_rooms'])){
 
         while($room_data = mysqli_fetch_assoc($room_res))
         {
+            //check availability filter
+            if($check_avail['checkin'] != '' || $check_avail['checkout'] != ''){
+                $tb_query = "SELECT COUNT(*) AS `total_bookings` FROM `booking_order` 
+                     WHERE `booking_status` = ? AND `room_id` = ? AND  
+                      `check_out` > ? AND `check_out` < ?";
+
+                $values = ['booked',$room_data['id'], $check_avail['checkin'], $check_avail['checkout']];
+                $tb_fetch = mysqli_fetch_assoc((select($tb_query, $values, 'siss')));
+
+                if(($room_data['quantity']-$tb_fetch['total_bookings'])==0){
+                    continue; // Skip this room if no availability
+                }
+            }
+
          // Get features for this room
             $fea_q = mysqli_query($con, "SELECT f.name FROM `features` f INNER JOIN `room_features` rfea ON f.id = rfea.features_id WHERE rfea.room_id = '{$room_data['id']}'");
             $features = [];

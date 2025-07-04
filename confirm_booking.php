@@ -209,7 +209,7 @@
                 if(data.status === 'success'){
                     alert('success','Payment successful! Booking confirmed.');
                     setTimeout(function() {
-                        window.location = 'my_bookings.php';
+                        window.location = 'bookings.php';
                     }, 1500); // 1.5 seconds
                 } else {
                     alert('danger','Booking failed!');

@@ -27,13 +27,19 @@
                         <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse flex-column align-items-stretch mt-2" id="filterDropdown">
+                            <!-- check availability filter -->
                             <div class="border bg-light p-3 rounded mb-3">
-                                <h5 class="mb-3" style="font-size: 18px;">CHECK AVAILABILITY</h5>
+                                <h5 class="d-flex align-items-center justify-content-between mb-3" style="font-size: 18px;">
+                                    <span>CHECK AVAILABILITY</span>
+                                    <button id="check_avail_btn" onclick="check_avail_clear()" class="btn shadow-none btn-sm text-secondary d-none">Reset</button>
+                                </h5>
                                 <label class="form-label">Check-in</label>
-                                <input type="date" class="form-control shadow-none mb-3">
+                                <input type="date" class="form-control shadow-none mb-3" id="checkin" onchange="check_avail_filter()">
                                 <label class="form-label">Check-out</label>
-                                <input type="date" class="form-control shadow-none">
+                                <input type="date" class="form-control shadow-none" id="checkout" onchange="check_avail_filter()">
                             </div>
+
+                            <!-- facilities filter -->
                             <div class="border bg-light p-3 rounded mb-3">
                                 <h5 class="mb-3" style="font-size: 18px;">FACILITIES</h5>
                                 <div class="mb-2">
@@ -49,16 +55,21 @@
                                 <label class="form-check-label" for="f3">Facility three</label>
                                 </div>
                             </div>
+
+                            <!-- guest filter -->
                             <div class="border bg-light p-3 rounded mb-3">
-                                <h5 class="mb-3" style="font-size: 18px;">GUESTS</h5>
+                                <h5 class="d-flex align-items-center justify-content-between mb-3" style="font-size: 18px;">
+                                    <span>GUESTS</span>
+                                    <button id="guests_btn" class="btn shadow-none btn-sm text-secondary d-none">Reset</button>
+                                </h5>
                                 <div class="d-flex">
                                     <div class="me-3">
                                         <label class="form-label">Adults</label>
-                                        <input type="number" class="form-control shadow-none">
+                                        <input type="number" min="1" id="adults" class="form-control shadow-none">
                                     </div>
                                     <div>
                                         <label class="form-label">Children</label>
-                                        <input type="number" class="form-control shadow-none">
+                                        <input type="number" min="1" id="children" class="form-control shadow-none">
                                     </div>
                                 </div>
                                 
@@ -78,9 +89,18 @@
     <script>
         let rooms_data = document.getElementById('rooms-data');
 
+        let checkin = document.getElementById('checkin');
+        let checkout = document.getElementById('checkout');
+        let check_avail_btn = document.getElementById('check_avail_btn');
+        
         function fetch_rooms(){
+            let check_avail = JSON.stringify({
+                checkin: checkin.value,
+                checkout: checkout.value
+            });
+
             let xhr = new XMLHttpRequest();
-            xhr.open("POST", "ajax/rooms.php?fetch_rooms", true);
+            xhr.open("POST", "ajax/rooms.php?fetch_rooms&check_avail="+check_avail, true);
 
             xhr.onprogress = function(){
                 rooms_data.innerHTML = `
@@ -95,6 +115,22 @@
             }
 
             xhr.send();
+        }
+
+        function check_avail_filter(){
+            if(checkin.value!='' && checkout.value!=''){
+                fetch_rooms();
+                check_avail_btn.classList.remove('d-none');
+            }
+        }
+
+        function check_avail_clear(){
+            checkin.value != '';
+            checkout.value != '';
+            check_avail_btn.classList.add('d-none');
+            fetch_rooms();
+
+            
         }
 
         fetch_rooms();

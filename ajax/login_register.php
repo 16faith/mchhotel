@@ -74,6 +74,7 @@
         else{
             if(!password_verify($data['pass'], $u_fetch['password'])){
             echo 'invalid_pass';
+            exit;
             }
             else{
                 session_start();
@@ -82,12 +83,10 @@
                 $_SESSION['uName'] = $u_fetch['name'];
                 $_SESSION['uPic'] = $u_fetch['profile'];
                 $_SESSION['uPhone'] = $u_fetch['phonenum'];
-                echo 1;
+                echo 'login_success';
+                exit;
             }
         }
-        echo 'login_success';
-        exit;
-
-
+        
     }
 ?>
